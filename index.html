@@ -1,10 +1,85 @@
 <!DOCTYPE html>
-<html> 
+<html lang="en">
   <head>
-    <title>My Site</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Pneu-Bionics — a senior design project exploring pneumatic bionic systems." />
+    <title>Pneu-Bionics | Home</title>
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <h1>Hello, world!</h1>
-    <p>This is my first website.</p>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand">Pneu-Bionics</a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
+          <span></span><span></span><span></span>
+        </button>
+        <nav id="site-nav" class="site-nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="timeline.html">Timeline</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="container hero-inner">
+          <p class="eyebrow">Senior Design Project</p>
+          <h1>Pneu-Bionics</h1>
+          <p class="lead">
+            We are designing pneumatically actuated bionic systems that move with the
+            compliance and adaptability of living tissue. Here is where you can follow our work.
+          </p>
+          <div class="hero-actions">
+            <a href="timeline.html" class="btn btn-primary">See our progress</a>
+            <a href="about.html" class="btn btn-ghost">Meet the team</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Highlights -->
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">What we do</h2>
+          <div class="card-grid">
+            <article class="card reveal">
+              <h3>Research</h3>
+              <p>Reviewing pneumatic actuator designs, soft-robotics literature, and bionic applications.</p>
+            </article>
+            <article class="card reveal">
+              <h3>Design</h3>
+              <p>Modeling and prototyping soft actuators that mimic muscle-like motion.</p>
+            </article>
+            <article class="card reveal">
+              <h3>Testing</h3>
+              <p>Measuring force, range of motion, and reliability through repeated trials.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to action -->
+      <section class="cta">
+        <div class="container cta-inner">
+          <h2>Interested in collaborating?</h2>
+          <p>Reach out with questions, feedback, or partnership ideas.</p>
+          <a href="contact.html" class="btn btn-primary">Get in touch</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>&copy; <span data-year></span> Pneu-Bionics Senior Design Team</p>
+        <a href="contact.html">Contact</a>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
   </body>
 </html>

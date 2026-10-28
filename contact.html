@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Contact the Pneu-Bionics senior design team." />
+    <title>Pneu-Bionics | Contact</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand">Pneu-Bionics</a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
+          <span></span><span></span><span></span>
+        </button>
+        <nav id="site-nav" class="site-nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="timeline.html">Timeline</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-header">
+        <div class="container">
+          <p class="eyebrow">Get in Touch</p>
+          <h1>Contact Us</h1>
+          <p class="lead">Questions, feedback, or collaboration ideas are welcome.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container contact-layout">
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" autocomplete="name" required />
+              <p class="form-error" data-error-for="name" role="alert"></p>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" required />
+              <p class="form-error" data-error-for="email" role="alert"></p>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" required></textarea>
+              <p class="form-error" data-error-for="message" role="alert"></p>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Send message</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+
+          <aside class="contact-info">
+            <h2>Other ways to reach us</h2>
+            <p><strong>Email:</strong> <a href="mailto:team@example.com">team@example.com</a></p>
+            <p><strong>Advisor:</strong> Replace with advisor name and contact</p>
+            <p><strong>Location:</strong> Replace with department or building</p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>&copy; <span data-year></span> Pneu-Bionics Senior Design Team</p>
+        <a href="contact.html">Contact</a>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

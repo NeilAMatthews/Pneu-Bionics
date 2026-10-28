@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Project timeline and progress updates for Pneu-Bionics." />
+    <title>Pneu-Bionics | Timeline</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand">Pneu-Bionics</a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
+          <span></span><span></span><span></span>
+        </button>
+        <nav id="site-nav" class="site-nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="timeline.html">Timeline</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-header">
+        <div class="container">
+          <p class="eyebrow">Progress</p>
+          <h1>Project Timeline</h1>
+          <p class="lead">A look at where the project has been and where it is headed.</p>
+
+          <div class="progress-summary">
+            <div class="progress-label">
+              <span>Overall progress</span>
+              <span data-progress-value>0%</span>
+            </div>
+            <div class="progress-track" role="progressbar" aria-label="Overall project progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <div class="progress-fill" data-progress-fill></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <ol class="timeline">
+
+            <li class="timeline-item done reveal">
+              <div class="timeline-marker"></div>
+              <div class="timeline-card">
+                <span class="timeline-date">Phase 1 &middot; Month 1</span>
+                <span class="status status-done">Completed</span>
+                <h3>Project Kickoff &amp; Research</h3>
+                <p>Defined project scope, goals, and success criteria. Reviewed existing pneumatic actuator and soft-robotics literature.</p>
+              </div>
+            </li>
+
+            <li class="timeline-item done reveal">
+              <div class="timeline-marker"></div>
+              <div class="timeline-card">
+                <span class="timeline-date">Phase 2 &middot; Month 2</span>
+                <span class="status status-done">Completed</span>
+                <h3>Concept Design</h3>
+                <p>Generated and compared actuator concepts. Selected a design direction based on force output, complexity, and cost.</p>
+              </div>
+            </li>
+
+            <li class="timeline-item active reveal">
+              <div class="timeline-marker"></div>
+              <div class="timeline-card">
+                <span class="timeline-date">Phase 3 &middot; Month 3</span>
+                <span class="status status-progress">In progress</span>
+                <h3>Prototype Build</h3>
+                <p>Fabricating the first working prototype and integrating the pneumatic control system.</p>
+              </div>
+            </li>
+
+            <li class="timeline-item reveal">
+              <div class="timeline-marker"></div>
+              <div class="timeline-card">
+                <span class="timeline-date">Phase 4 &middot; Month 4</span>
+                <span class="status status-planned">Planned</span>
+                <h3>Testing &amp; Validation</h3>
+                <p>Run repeated trials to measure force, range of motion, and durability. Compare results against project goals.</p>
+              </div>
+            </li>
+
+            <li class="timeline-item reveal">
+              <div class="timeline-marker"></div>
+              <div class="timeline-card">
+                <span class="timeline-date">Phase 5 &middot; Month 5</span>
+                <span class="status status-planned">Planned</span>
+                <h3>Final Presentation</h3>
+                <p>Prepare the final report, demonstration, and presentation for faculty and industry reviewers.</p>
+              </div>
+            </li>
+
+          </ol>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>&copy; <span data-year></span> Pneu-Bionics Senior Design Team</p>
+        <a href="contact.html">Contact</a>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
