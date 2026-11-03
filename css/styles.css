@@ -487,6 +487,89 @@ p {
   color: var(--color-muted);
 }
 
+/* ---------- Content blocks (figures, tables, lists, updates) ---------- */
+
+.section + .section {
+  padding-top: 0;
+}
+
+figure {
+  margin: 24px 0;
+}
+
+figure img {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+figcaption {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  text-align: center;
+}
+
+ul {
+  padding-left: 1.25rem;
+  margin: 0 0 16px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin: 16px 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+th {
+  font-weight: 600;
+  background: var(--color-surface);
+}
+
+.source {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.update {
+  margin-bottom: 24px;
+}
+
+.update-meta {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  margin-bottom: 4px;
+}
+
+.update-date {
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-right: 8px;
+}
+
+.update-note {
+  color: var(--color-muted);
+}
+
+.update-next {
+  margin-bottom: 0;
+}
+
 /* ---------- Footer ---------- */
 
 .site-footer {
