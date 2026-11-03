@@ -90,18 +90,48 @@
       <section class="section">
         <div class="container">
           <h2 class="section-title">Model equations</h2>
-          <ul>
-            <li>Compression: <code>compression = x0 − xf</code></li>
-            <li>Bag area: <code>bagArea = W × H</code></li>
-            <li>Reservoir pressure: <code>P_init = P_atm − P_maxvac</code></li>
-            <li>Length constraint: <code>L0 ≥ (Ln × N) + (x0 × (N − 1))</code></li>
-            <li>Block volume: <code>VB = (W/3) × H × Ln</code>, total <code>VBtotal = 2 × VB × N</code></li>
-            <li>Initial bag air volume: <code>V_bag,init = (L0 × W × H) − VBtotal</code></li>
-            <li>Equilibrium pressure: <code>P_eq = (P_atm × V_bag,init + P_init × VBtotal) / (V_bag,init + VBtotal)</code></li>
-            <li>Gauge pressure and force: <code>P_gauge = P_atm − P_eq</code>, <code>pressureForce = P_gauge × bagArea</code></li>
-            <li>Spring force: <code>springForce = k × compression × 2 × (N − 1)</code></li>
-            <li>Net force and torque: <code>totalForce = pressureForce − springForce</code>, <code>torque = totalForce × r</code></li>
-          </ul>
+          <div class="equations">
+            <div class="eq">
+              <span class="eq-label">Compression</span>
+              <span class="eq-body">Δx = x<sub>0</sub> − x<sub>f</sub></span>
+            </div>
+            <div class="eq">
+              <span class="eq-label">Bag area</span>
+              <span class="eq-body">A = W × H</span>
+            </div>
+            <div class="eq">
+              <span class="eq-label">Reservoir pressure</span>
+              <span class="eq-body">P<sub>init</sub> = P<sub>atm</sub> − P<sub>max vac</sub></span>
+            </div>
+            <div class="eq">
+              <span class="eq-label">Length constraint</span>
+              <span class="eq-body">L<sub>0</sub> ≥ L<sub>n</sub> N + x<sub>0</sub>(N − 1)</span>
+            </div>
+            <div class="eq">
+              <span class="eq-label">Block volume</span>
+              <span class="eq-body">V<sub>B</sub> = <span class="frac"><span>W</span><span>3</span></span> H L<sub>n</sub> &nbsp;&nbsp; V<sub>B,tot</sub> = 2 V<sub>B</sub> N</span>
+            </div>
+            <div class="eq">
+              <span class="eq-label">Initial bag air volume</span>
+              <span class="eq-body">V<sub>bag,init</sub> = L<sub>0</sub> W H − V<sub>B,tot</sub></span>
+            </div>
+            <div class="eq">
+              <span class="eq-label">Equilibrium pressure</span>
+              <span class="eq-body">P<sub>eq</sub> = <span class="frac"><span>P<sub>atm</sub> V<sub>bag,init</sub> + P<sub>init</sub> V<sub>B,tot</sub></span><span>V<sub>bag,init</sub> + V<sub>B,tot</sub></span></span></span>
+            </div>
+            <div class="eq">
+              <span class="eq-label">Gauge pressure and force</span>
+              <span class="eq-body">P<sub>gauge</sub> = P<sub>atm</sub> − P<sub>eq</sub> &nbsp;&nbsp; F<sub>pressure</sub> = P<sub>gauge</sub> A</span>
+            </div>
+            <div class="eq">
+              <span class="eq-label">Spring force</span>
+              <span class="eq-body">F<sub>spring</sub> = k Δx · 2(N − 1)</span>
+            </div>
+            <div class="eq">
+              <span class="eq-label">Net force and torque</span>
+              <span class="eq-body">F<sub>net</sub> = F<sub>pressure</sub> − F<sub>spring</sub> &nbsp;&nbsp; τ = F<sub>net</sub> r</span>
+            </div>
+          </div>
         </div>
       </section>
 
