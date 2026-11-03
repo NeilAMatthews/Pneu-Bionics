@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Bi-weekly progress updates for the Pneu-Bionics senior design project." />
+    <title>Pneu-Bionics | Updates</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand">Pneu-Bionics</a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
+          <span></span><span></span><span></span>
+        </button>
+        <nav id="site-nav" class="site-nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="concepts.html">Concepts</a>
+          <a href="engineering.html">Engineering</a>
+          <a href="budget.html">Budget</a>
+          <a href="updates.html">Updates</a>
+          <a href="timeline.html">Timeline</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-header">
+        <div class="container">
+          <p class="eyebrow">Progress</p>
+          <h1>Project Updates</h1>
+          <p class="lead">A bi-weekly log of what the team completed, what we learned, and what comes next.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container update-list">
+
+          <!--
+            TEMPLATE: copy one <article class="update"> block below for each new update.
+            Put the newest update at the top. Fill in:
+              - date:     the update date, e.g. "Nov 3, 2026"
+              - phase:    the phase it belongs to, e.g. "Phase 2"
+              - title:    one line describing the main result
+              - summary:  two or three sentences
+              - highlights: 2 to 4 bullet points
+              - next:     one line on what the team does next
+              - media:    optional photo, GIF, or video (delete the figure if not used)
+          -->
+
+          <article class="update card reveal">
+            <p class="update-meta"><span class="update-date">Oct 22, 2026</span> <span class="update-phase">Phase 2</span></p>
+            <h2>Derivations and diagrams are in</h2>
+            <p>The team finished the initial derivations and the preliminary electrical and software diagrams. These set up the actuator modeling and control work for Phase 2.</p>
+            <ul>
+              <li>Initial derivations completed (due Oct 22).</li>
+              <li>Preliminary electrical and software diagrams completed (due Oct 22).</li>
+              <li>Mentor meeting held (Oct 20).</li>
+            </ul>
+            <p class="update-next"><strong>Next:</strong> finish the MATLAB optimization and the CAD edits.</p>
+          </article>
+
+          <article class="update card reveal">
+            <p class="update-meta"><span class="update-date">Sep 27, 2026</span> <span class="update-phase">Phase 1</span></p>
+            <h2>Phase 1 report and presentation complete</h2>
+            <p>The team finished the Phase 1 report and presentation. The project scope was set around mild ambulatory SMA, with a target mass under 5 kg and a manufacturing cost under $200.</p>
+            <ul>
+              <li>Changed the focus from SMA Type III to mild ambulatory SMA.</li>
+              <li>Updated the Gantt chart to show who worked on each task.</li>
+              <li>Added background on SESMA 4.0 and earlier iterations.</li>
+            </ul>
+            <p class="update-next"><strong>Next:</strong> start Phase 2, design evaluation and optimization.</p>
+          </article>
+
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>&copy; <span data-year></span> Pneu-Bionics Senior Design Team</p>
+        <a href="contact.html">Contact</a>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

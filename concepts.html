@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Concept designs and how we chose the Pneu-Bionics actuator." />
+    <title>Pneu-Bionics | Concepts</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand">Pneu-Bionics</a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
+          <span></span><span></span><span></span>
+        </button>
+        <nav id="site-nav" class="site-nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="concepts.html">Concepts</a>
+          <a href="engineering.html">Engineering</a>
+          <a href="budget.html">Budget</a>
+          <a href="updates.html">Updates</a>
+          <a href="timeline.html">Timeline</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-header">
+        <div class="container">
+          <p class="eyebrow">Design</p>
+          <h1>Concept Designs</h1>
+          <p class="lead">Two actuator concepts were developed. The spring-based design failed in testing, so we moved to a scissor mechanism.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Design requirements</h2>
+          <div class="card-grid">
+            <article class="card reveal">
+              <h3>Target user</h3>
+              <p>Adults with mild ambulatory SMA who can walk at least five steps independently.</p>
+            </article>
+            <article class="card reveal">
+              <h3>Mass and fit</h3>
+              <p>Target mass under 5 kg, with an adjustable fit for everyday use.</p>
+            </article>
+            <article class="card reveal">
+              <h3>Function</h3>
+              <p>Provide knee support during sit-to-stand while preserving the user's active muscle engagement.</p>
+            </article>
+            <article class="card reveal">
+              <h3>Cost</h3>
+              <p>Manufacturing cost under $200.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">The two concepts</h2>
+          <div class="card-grid">
+            <article class="card reveal">
+              <figure>
+                <img src="images/concept_designs/old_design_spiral.png" alt="CAD model of the spring-based actuator concept: two crossed curved springs between two rigid plates" style="width:100%;height:auto;" />
+                <figcaption><strong>Concept A: spring-based (retired)</strong></figcaption>
+              </figure>
+              <p>Two crossed spring elements between rigid plates. The spring element repeatedly failed, so this concept was dropped.</p>
+            </article>
+            <article class="card reveal">
+              <figure>
+                <img src="images/concept_designs/new_design_lift.png" alt="CAD model of the scissor-lift actuator concept: crossed rigid arms with pin joints between two plates" style="width:100%;height:auto;" />
+                <figcaption><strong>Concept B: scissor mechanism (selected)</strong></figcaption>
+              </figure>
+              <p>The spring element was replaced with a robust scissor mechanism. This is the design carried forward into the engineering analysis.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Why we changed direction</h2>
+          <p>Concept A was a continuation of earlier graduate research in Professor Zanotto's lab. Its spring element broke repeatedly during testing. Concept B keeps the same pressurized-pouch principle but uses a rigid scissor linkage in place of the spring, which is more durable.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>&copy; <span data-year></span> Pneu-Bionics Senior Design Team</p>
+        <a href="contact.html">Contact</a>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

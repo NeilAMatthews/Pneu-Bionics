@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Technical analysis and engineering design of the Pneu-Bionics actuator." />
+    <title>Pneu-Bionics | Engineering</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand">Pneu-Bionics</a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
+          <span></span><span></span><span></span>
+        </button>
+        <nav id="site-nav" class="site-nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="concepts.html">Concepts</a>
+          <a href="engineering.html">Engineering</a>
+          <a href="budget.html">Budget</a>
+          <a href="updates.html">Updates</a>
+          <a href="timeline.html">Timeline</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-header">
+        <div class="container">
+          <p class="eyebrow">Analysis</p>
+          <h1>Technical Analysis &amp; Engineering Design</h1>
+          <p class="lead">A sealed pouch with a scissor-mechanism core, sized so that it assists the knee during sit-to-stand.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Modeling assumptions</h2>
+          <ul>
+            <li>The pouch is airtight and does not leak air or pressure.</li>
+            <li>The air inside the sealed pouch behaves as an ideal gas.</li>
+            <li>Height, width, and initial length of the pouch are estimates.</li>
+            <li>The rigid blocks do not deform under pressure.</li>
+          </ul>
+          <p>The pouch is made of TPU-coated nylon, with heat-welded tabs for reinforcement.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Design parameters</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Parameter</th><th>Value</th><th>Meaning</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>W</td><td>0.10 m</td><td>Pouch width</td></tr>
+                <tr><td>H</td><td>0.015 m</td><td>Pouch and rigid block height</td></tr>
+                <tr><td>L<sub>0</sub></td><td>0.20 m</td><td>Initial pouch length before compression</td></tr>
+                <tr><td>x<sub>0</sub></td><td>0.010 m</td><td>Initial spring length</td></tr>
+                <tr><td>x<sub>f</sub></td><td>0.005 m</td><td>Final spring length after compression</td></tr>
+                <tr><td>L<sub>n</sub></td><td>0.01 to 0.10 m</td><td>Length of each rigid block (search range)</td></tr>
+                <tr><td>N</td><td>2 to 5</td><td>Number of repeating rigid blocks (search range)</td></tr>
+                <tr><td>k</td><td>1 to 10,000 N/m</td><td>Spring constant (search range)</td></tr>
+                <tr><td>P<sub>atm</sub></td><td>101,325 Pa</td><td>Atmospheric pressure</td></tr>
+                <tr><td>P<sub>max vac</sub></td><td>40,000 Pa</td><td>Maximum gauge vacuum</td></tr>
+                <tr><td>r</td><td>0.05 m</td><td>Knee moment arm</td></tr>
+                <tr><td>T</td><td>16 N·m</td><td>Average knee torque for a person with SMA</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Model equations</h2>
+          <ul>
+            <li>Compression: <code>compression = x0 − xf</code></li>
+            <li>Bag area: <code>bagArea = W × H</code></li>
+            <li>Reservoir pressure: <code>P_init = P_atm − P_maxvac</code></li>
+            <li>Length constraint: <code>L0 ≥ (Ln × N) + (x0 × (N − 1))</code></li>
+            <li>Block volume: <code>VB = (W/3) × H × Ln</code>, total <code>VBtotal = 2 × VB × N</code></li>
+            <li>Initial bag air volume: <code>V_bag,init = (L0 × W × H) − VBtotal</code></li>
+            <li>Equilibrium pressure: <code>P_eq = (P_atm × V_bag,init + P_init × VBtotal) / (V_bag,init + VBtotal)</code></li>
+            <li>Gauge pressure and force: <code>P_gauge = P_atm − P_eq</code>, <code>pressureForce = P_gauge × bagArea</code></li>
+            <li>Spring force: <code>springForce = k × compression × 2 × (N − 1)</code></li>
+            <li>Net force and torque: <code>totalForce = pressureForce − springForce</code>, <code>torque = totalForce × r</code></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Optimization results</h2>
+          <p>A MATLAB script searched block lengths, stiffness values, and block counts that fit within the initial pouch length, and kept the combination with the highest torque.</p>
+          <div class="card-grid">
+            <article class="card reveal">
+              <h3>Optimal design</h3>
+              <p><strong>Block length:</strong> 0.095 m<br /><strong>Block count:</strong> 2<br /><strong>Peak torque:</strong> 1.00 N·m<br /><strong>Assistance:</strong> 11.86% of 16 N·m</p>
+            </article>
+            <article class="card reveal">
+              <h3>Pouch volumes</h3>
+              <p><strong>Initial volume (V0):</strong> 0.000300 m³<br /><strong>Compressed volume (Vc):</strong> 0.000293 m³<br /><strong>Initial air volume:</strong> 0.000110 m³<br /><strong>Rigid block volume:</strong> 0.000190 m³</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Checking against the requirements</h2>
+          <ul>
+            <li><strong>Cost:</strong> the requirement is a manufacturing cost under $200. The team is aiming for a device cost of about $200. See the <a href="budget.html">budget</a>.</li>
+            <li><strong>Mass</strong> must be under 5 kg.</li>
+            <li><strong>Assistance:</strong> the optimized design gives 1.90 N·m, 11.86% of the average knee torque, while leaving the user's own muscles engaged.</li>
+          </ul>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Force modeling</h2>
+          <p>The MATLAB sweep below shows how actuator force changes with block length, spring stiffness, and number of modules. Colour indicates force magnitude. The optimal design used a 0.095 m block length and 2 modules.</p>
+          <figure>
+            <img src="images/matlab_plots/actuator_vs_force.png" alt="3D plot of actuator force contours against block length, spring stiffness, and number of modules" style="width:100%;height:auto;" />
+            <figcaption>Actuator force across block length, spring stiffness, and module count (MATLAB).</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Control system design</h2>
+          <p>An ESP32-S3 microcontroller reads pressure, force, and motion sensors, and drives a pneumatic pump and solenoid valve to fill and vent the actuator.</p>
+          <figure>
+            <img src="images/diagrams/electrical_diagram.png" alt="Electrical block diagram: 6V battery, DC-DC converter, voltage regulators, ESP32-S3 controller, sensors, pneumatic pump, solenoid valve, and actuator" style="width:100%;height:auto;" />
+            <figcaption>Electrical design: power, sensing, control, and pneumatic drive.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/diagrams/software_chart.png" alt="Flowchart of the sit-to-stand intent classifier, which runs every 10 ms and decides when the wearer intends to stand" style="width:100%;height:auto;" />
+            <figcaption>Sit-to-stand intent classifier. The control loop runs every 10 ms, detects when the wearer intends to stand, and ramps knee assist torque up to 5 N·m.</figcaption>
+          </figure>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>&copy; <span data-year></span> Pneu-Bionics Senior Design Team</p>
+        <a href="contact.html">Contact</a>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
