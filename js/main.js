@@ -1,7 +1,7 @@
 /* ==========================================================================
    Pneu-Bionics — site behavior
    Handles: mobile navigation, active links, footer year, scroll reveal,
-   timeline progress bar, and contact form validation.
+   and timeline progress bar.
    ========================================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setFooterYear();
   setupScrollReveal();
   setupTimelineProgress();
-  setupContactForm();
 });
 
 /* ---------- Mobile navigation ---------- */
@@ -101,64 +100,4 @@ function setupTimelineProgress() {
   });
   label.textContent = `${percent}%`;
   track.setAttribute("aria-valuenow", String(percent));
-}
-
-/* ---------- Contact form validation ----------
-   Client-side only. Connect the submit step to a backend or a
-   form service (e.g. Formspree, Netlify Forms) before going live. */
-
-function setupContactForm() {
-  const form = document.getElementById("contact-form");
-  if (!form) return;
-
-  const status = form.querySelector(".form-status");
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  const rules = {
-    name: (value) => (value.trim() ? "" : "Please enter your name."),
-    email: (value) => {
-      if (!value.trim()) return "Please enter your email address.";
-      return emailPattern.test(value.trim()) ? "" : "Please enter a valid email address.";
-    },
-    message: (value) => (value.trim().length >= 10 ? "" : "Message should be at least 10 characters."),
-  };
-
-  function validateField(name) {
-    const field = form.elements[name];
-    const message = rules[name](field.value);
-    const group = field.closest(".form-group");
-    const errorEl = form.querySelector(`[data-error-for="${name}"]`);
-
-    errorEl.textContent = message;
-    group.classList.toggle("invalid", Boolean(message));
-    field.setAttribute("aria-invalid", String(Boolean(message)));
-    return !message;
-  }
-
-  // Re-check a field once the user has left it, so errors clear as they type.
-  Object.keys(rules).forEach((name) => {
-    form.elements[name].addEventListener("blur", () => validateField(name));
-    form.elements[name].addEventListener("input", () => {
-      if (form.elements[name].closest(".form-group").classList.contains("invalid")) {
-        validateField(name);
-      }
-    });
-  });
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    status.className = "form-status";
-
-    const results = Object.keys(rules).map(validateField);
-    if (results.includes(false)) {
-      status.textContent = "Please fix the highlighted fields.";
-      status.classList.add("error");
-      return;
-    }
-
-    // Placeholder success path: replace with a real submission call.
-    form.reset();
-    status.textContent = "Thanks! Your message has been sent.";
-    status.classList.add("success");
-  });
 }
